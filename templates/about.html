@@ -1,0 +1,591 @@
+
+
+{% if request.session.email %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <style>
+      #site{
+        padding:0 12px 0 12px;
+        height:41px;
+      }
+      #site1{
+        padding:8px 0 8px 0;
+        background-color: #212529;
+          
+      }
+    </style>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <title>About</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark" id="site1">
+      <div class="container-fluid" id="site">
+        <a class="navbar-brand" href="/">Covid Vaccination Website</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/about">About</a>
+            </li>
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="/services" role="button" aria-expanded="false">Services</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/appointment">Book Appointment</a></li>
+              <li><a class="dropdown-item" href="">Doctor Support</a></li>
+              <li><a class="dropdown-item" href="">Health Tips</a></li>
+            </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/helpline">Helpline</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contact">Contact</a>
+            </li>
+            <ul class="nav justify-content-end">
+              <li class="nav-item">
+                <a class="nav-link" href="/logout">Logout</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="">User:{{request.session.email}}</a>
+              </li>
+            </ul>
+
+          </ul>
+
+        </div>
+      </div>
+    </nav>  
+  <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>About us</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<style>
+
+.carousel-item{
+    text-align: center;
+    min-height: 280px; /* Prevent carousel from being distorted if for some reason image doesn't load */
+}
+.size{
+height:600px;
+width:1200px;
+}
+.ccontainer-lg my-3{
+margin:0;
+}
+.bg-grey {
+    background-color: #d4e2d4;
+  }
+body {
+    font: 400 16px Montserrat, sans-serif;
+    line-height: 1.8;
+    color: #222831;
+background-color:ivory;
+  }
+  h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #0a043c;
+font-family:Merriweather,serif;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  h4 {
+    font-size: 20px;
+    line-height: 1.375em;
+    color: black;
+font-family: 'Kameron', serif;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }  
+.container-fluid {
+    padding: 40px 90px;
+width:150%;
+  }
+.container-lg{
+padding:0;
+width:150%;
+}
+
+.button{
+text-align:center;
+
+}
+.blink_me {
+  animation: blinker 1.5s linear infinite;
+text-align:center;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+.BUTTON_GNA {
+   -webkit-border-radius: 18px;
+   -moz-border-radius: 18px;
+   border-radius: 18px;
+   color: #FFFFFF;
+   font-family: Brush Script MT;
+   font-size: 40px;
+   font-weight: 100;
+   padding: 25px;
+   background-color: #D4E2D4;
+   -webkit-box-shadow: 1px 1px 20px 0 #000000;
+   -moz-box-shadow: 1px 1px 20px 0 #000000;
+   box-shadow: 1px 1px 20px 0 #000000;
+   text-shadow: 1px 1px 20px #000000;
+   border: solid #337FED 1px;
+   text-decoration: none;
+   display: inline-block;
+   cursor: pointer;
+   text-align: center;
+}
+
+.BUTTON_GNA:hover {
+   border: solid #337FED 1px;
+   background: #1E62D0;
+   background-image: -webkit-linear-gradient(top, #1E62D0, #3D94F6);
+   background-image: -moz-linear-gradient(top, #1E62D0, #3D94F6);
+   background-image: -ms-linear-gradient(top, #1E62D0, #3D94F6);
+   background-image: -o-linear-gradient(top, #1E62D0, #3D94F6);
+   background-image: -webkit-gradient(to bottom, #1E62D0, #3D94F6);
+   -webkit-border-radius: 20px;
+   -moz-border-radius: 20px;
+   border-radius: 20px;
+   text-decoration: none;
+color:black;
+}
+</style>
+</head>
+<body>
+<div class="container-lg my-3">
+    <div id="myCarousel" class="carousel slide" data-interval="3000" data-ride="carousel">
+        <!-- Carousel indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <!-- Wrapper for carousel items -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="size" src="https://www.pharmaceutical-technology.com/wp-content/uploads/sites/10/2020/03/Covid-19-Vaccine-development-e1599531596297.jpg" alt="First Slide">
+            </div>
+            <div class="carousel-item">
+                <img class="size" src="https://cdn.dnaindia.com/sites/default/files/styles/full/public/2020/11/29/940310-coronavirus-vaccine.jpg" alt="Second Slide">
+            </div>
+            <div class="carousel-item">
+                <img class="size" src="https://www.hopkinsmedicine.org/-/media/images/health/1_-conditions/coronavirus/covid-vaccine-safety-teaser.ashx" alt="Third Slide">
+            </div>
+        </div>
+        <!-- Carousel controls -->
+        <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+</div>
+<div id="about" class="container-fluid">
+<div class="row">
+    <div class="col-sm-8">
+      <h2>About our portal</h2><br>
+      <h4>Our portal makes the process of vaccine registration easier for you. We provide you with the following services:</h4>
+      <ul>
+      <li>Eligibilty check</li>
+      <li>Booking an appointment at your convenience</li>
+      <li>Keeping track of your health post-vaccination</li>
+      <li>Emergency contacts</li>
+      <li>Day-to-day notifications </li>
+      <li>Health Tips and Doctor's Support</li>
+      </ul>
+
+<div class="blink_me"><h3>"People above 18 years of age can <a href="register">Register now</a>"</h3></div>
+</div>
+</div>
+</div>
+<div class="container-fluid bg-grey">
+  <div class="row">
+    <div class="col-sm-8">
+      <h2>About COVID Vaccines</h2><br>
+     <ul>
+<li>The vaccine will help protect you, your family, and others around you from getting  COVID-19.</li>
+<li>Most COVID-19 vaccines will require you to get two doses about 3 or 4 weeks apart. </li>
+<li>You need both doses to get the full benefit of the vaccine.</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+<div id="about" class="container-fluid">
+<div class="row">
+    <div class="col-sm-8">
+      <h2>What are the eligibility criteria?</h2><br>
+<h4>In case of the following ailments, consult the doctor before getting vaccinated:</h4>
+      <ul>
+      <li>People who are immunocompromised(cancer patients on chemotherapy, HIV-positive people, and those on steroids) or are on medicines that affect the immune system are advised not to take Covid vaccine.</li>
+      <li>Persons with a history of immediate or delayed-onset anaphylaxis(extreme allergic reaction) or allergic reaction to the vaccine or injectable therapies, pharmaceutical products, food items should avoid vaccination. Signs of severe allergic reaction could include difficulty in breathing, swelling of face and throat, fast heartbeat, rashes all over the body, dizziness, and weakness.</li>
+      <li>People with bleeding disorders or who are on blood thinners have been advised to avoid the shot.</li>
+      <li>Pregnant or lactating mothers are advised against taking the jab.</li>
+      <li>COVID-19 patients who have been given anti-SARS-CoV-2 monoclonal antibodies or convalescent plasma should not receive the jab.</li>
+      <li>Persons with active symptoms of coronavirus infection should not be vaccinated.</li>
+<li>Those who are unwell(high fever) and hospitalized patients due to any illness should not get COVID-19 vaccines</li>
+<li>Persons allergic to covishield and covaxin ingredients should not be given the covid vaccine.</li>
+<ul>
+<li>	Covishield ingredients are L-Histidine, L-Histidine hydrochloride monohydrate, Magnesium chloride hexahydrate, Polysorbate 80, Ethanol, Sucrose, Sodium chloride, Disodium edetate dihydrate (EDTA), Water for injection.</li>
+<li>COVAXIN contains 6µg of whole-virion inactivated SARS-CoV-2 antigen, and the other inactive ingredients such as aluminum hydroxide gel (250 µg), TLR 7/8 agonist, 15 µgTM 2-phenoxyethanol 2.5 mg, and phosphate buffer saline up to 0.5 ml. </li>
+</ul>
+
+      </ul>
+<div class="button">
+<h3><b>If you meet the eligibilty criteria,</b></h3>
+<a href="register" class="BUTTON_GNA">Register</a>
+</div>
+</div>
+</div>
+</div>
+<div class="container-fluid bg-grey">
+  <div class="row">
+    <div class="col-sm-8">
+      <h2>Dose Availability</h2><br>
+     <ul>
+<li>Vaccines will be prioritized based on state and national guidelines as they become available.</li>
+<li>COVID-19 vaccines are not recommended for anyone under age 18 years. </li>
+<li> Pharmacy locations will receive the vaccine at different times based on what public health officials decide for the needs of our communities.</li>
+<li>We recommend you pre-register so we can notify you if we’re able to provide you with the vaccine.</li>
+<li>The goverment currently has supplies of covaxin and covishield vaccine supplies. You will receive your doses dependent upon availability. At the time of registration, you will see which vaccine you will be making an appointment for.</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+<div id="about" class="container-fluid">
+<div class="row">
+    <div class="col-sm-8">
+      <h2>Post-Vaccination</h2><br>
+      <p>Feel free to report to the portal in case you face any complications after the vaccination and  we will provide you with immediate medical assistance by contacting the nearby hospitals.</p>
+</body>
+</html>
+{% else %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <style>
+      #site{
+        padding:0 12px 0 12px;
+        height:41px;
+      }
+      #site1{
+        padding:8px 0 8px 0;
+        background-color: #212529;
+          
+      }
+    </style>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <title>About</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark " id="site1">
+      <div class="container-fluid" id="site">
+        <a class="navbar-brand" href="/">Covid Vaccination Website</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/about">About</a>
+            </li>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/helpline">Helpline</a>
+            </li>
+            <ul class="nav justify-content-end">
+              <li class="nav-item">
+                <a class="nav-link" href="/login">Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/signup">Signup</a>
+              </li>
+            </ul>
+
+          </ul>
+
+        </div>
+      </div>
+    </nav>  
+  <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>About us</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<style>
+
+.carousel-item{
+    text-align: center;
+    min-height: 280px; /* Prevent carousel from being distorted if for some reason image doesn't load */
+}
+.size{
+height:600px;
+width:1200px;
+}
+.ccontainer-lg my-3{
+margin:0;
+}
+.bg-grey {
+    background-color: #d4e2d4;
+  }
+body {
+    font: 400 16px Montserrat, sans-serif;
+    line-height: 1.8;
+    color: #222831;
+background-color:ivory;
+  }
+  h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #0a043c;
+font-family:Merriweather,serif;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  h4 {
+    font-size: 20px;
+    line-height: 1.375em;
+    color: black;
+font-family: 'Kameron', serif;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }  
+.container-fluid {
+    padding: 40px 90px;
+width:150%;
+  }
+.container-lg{
+padding:0;
+width:150%;
+}
+
+.button{
+text-align:center;
+
+}
+.blink_me {
+  animation: blinker 1.5s linear infinite;
+text-align:center;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+.BUTTON_GNA {
+   -webkit-border-radius: 18px;
+   -moz-border-radius: 18px;
+   border-radius: 18px;
+   color: #FFFFFF;
+   font-family: Brush Script MT;
+   font-size: 40px;
+   font-weight: 100;
+   padding: 25px;
+   background-color: #D4E2D4;
+   -webkit-box-shadow: 1px 1px 20px 0 #000000;
+   -moz-box-shadow: 1px 1px 20px 0 #000000;
+   box-shadow: 1px 1px 20px 0 #000000;
+   text-shadow: 1px 1px 20px #000000;
+   border: solid #337FED 1px;
+   text-decoration: none;
+   display: inline-block;
+   cursor: pointer;
+   text-align: center;
+}
+
+.BUTTON_GNA:hover {
+   border: solid #337FED 1px;
+   background: #1E62D0;
+   background-image: -webkit-linear-gradient(top, #1E62D0, #3D94F6);
+   background-image: -moz-linear-gradient(top, #1E62D0, #3D94F6);
+   background-image: -ms-linear-gradient(top, #1E62D0, #3D94F6);
+   background-image: -o-linear-gradient(top, #1E62D0, #3D94F6);
+   background-image: -webkit-gradient(to bottom, #1E62D0, #3D94F6);
+   -webkit-border-radius: 20px;
+   -moz-border-radius: 20px;
+   border-radius: 20px;
+   text-decoration: none;
+color:black;
+}
+</style>
+</head>
+<body>
+<div class="container-lg my-3">
+    <div id="myCarousel" class="carousel slide" data-interval="3000" data-ride="carousel">
+        <!-- Carousel indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <!-- Wrapper for carousel items -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="size" src="https://www.pharmaceutical-technology.com/wp-content/uploads/sites/10/2020/03/Covid-19-Vaccine-development-e1599531596297.jpg" alt="First Slide">
+            </div>
+            <div class="carousel-item">
+                <img class="size" src="https://cdn.dnaindia.com/sites/default/files/styles/full/public/2020/11/29/940310-coronavirus-vaccine.jpg" alt="Second Slide">
+            </div>
+            <div class="carousel-item">
+                <img class="size" src="https://www.hopkinsmedicine.org/-/media/images/health/1_-conditions/coronavirus/covid-vaccine-safety-teaser.ashx" alt="Third Slide">
+            </div>
+        </div>
+        <!-- Carousel controls -->
+        <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+</div>
+<div id="about" class="container-fluid">
+<div class="row">
+    <div class="col-sm-8">
+      <h2>About our portal</h2><br>
+      <h4>Our portal makes the process of vaccine registration easier for you. We provide you with the following services:</h4>
+      <ul>
+      <li>Eligibilty check</li>
+      <li>Booking an appointment at your convenience</li>
+      <li>Keeping track of your health post-vaccination</li>
+      <li>Emergency contacts</li>
+      <li>Day-to-day notifications </li>
+      <li>Health Tips and Doctor's Support</li>
+      </ul>
+
+<div class="blink_me"><h3>"People above 18 years of age can <a href="register">Register now</a>"</h3></div>
+</div>
+</div>
+</div>
+<div class="container-fluid bg-grey">
+  <div class="row">
+    <div class="col-sm-8">
+      <h2>About COVID Vaccines</h2><br>
+     <ul>
+<li>The vaccine will help protect you, your family, and others around you from getting  COVID-19.</li>
+<li>Most COVID-19 vaccines will require you to get two doses about 3 or 4 weeks apart. </li>
+<li>You need both doses to get the full benefit of the vaccine.</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+<div id="about" class="container-fluid">
+<div class="row">
+    <div class="col-sm-8">
+      <h2>What are the eligibility criteria?</h2><br>
+<h4>In case of the following ailments, consult the doctor before getting vaccinated:</h4>
+      <ul>
+      <li>People who are immunocompromised(cancer patients on chemotherapy, HIV-positive people, and those on steroids) or are on medicines that affect the immune system are advised not to take Covid vaccine.</li>
+      <li>Persons with a history of immediate or delayed-onset anaphylaxis(extreme allergic reaction) or allergic reaction to the vaccine or injectable therapies, pharmaceutical products, food items should avoid vaccination. Signs of severe allergic reaction could include difficulty in breathing, swelling of face and throat, fast heartbeat, rashes all over the body, dizziness, and weakness.</li>
+      <li>People with bleeding disorders or who are on blood thinners have been advised to avoid the shot.</li>
+      <li>Pregnant or lactating mothers are advised against taking the jab.</li>
+      <li>COVID-19 patients who have been given anti-SARS-CoV-2 monoclonal antibodies or convalescent plasma should not receive the jab.</li>
+      <li>Persons with active symptoms of coronavirus infection should not be vaccinated.</li>
+<li>Those who are unwell(high fever) and hospitalized patients due to any illness should not get COVID-19 vaccines</li>
+<li>Persons allergic to covishield and covaxin ingredients should not be given the covid vaccine.</li>
+<ul>
+<li>	Covishield ingredients are L-Histidine, L-Histidine hydrochloride monohydrate, Magnesium chloride hexahydrate, Polysorbate 80, Ethanol, Sucrose, Sodium chloride, Disodium edetate dihydrate (EDTA), Water for injection.</li>
+<li>COVAXIN contains 6µg of whole-virion inactivated SARS-CoV-2 antigen, and the other inactive ingredients such as aluminum hydroxide gel (250 µg), TLR 7/8 agonist, 15 µgTM 2-phenoxyethanol 2.5 mg, and phosphate buffer saline up to 0.5 ml. </li>
+</ul>
+
+      </ul>
+<div class="button">
+<h3><b>If you meet the eligibilty criteria,</b></h3>
+<a href="register" class="BUTTON_GNA">Register</a>
+</div>
+</div>
+</div>
+</div>
+<div class="container-fluid bg-grey">
+  <div class="row">
+    <div class="col-sm-8">
+      <h2>Dose Availability</h2><br>
+     <ul>
+<li>Vaccines will be prioritized based on state and national guidelines as they become available.</li>
+<li>COVID-19 vaccines are not recommended for anyone under age 18 years. </li>
+<li> Pharmacy locations will receive the vaccine at different times based on what public health officials decide for the needs of our communities.</li>
+<li>We recommend you pre-register so we can notify you if we’re able to provide you with the vaccine.</li>
+<li>The goverment currently has supplies of covaxin and covishield vaccine supplies. You will receive your doses dependent upon availability. At the time of registration, you will see which vaccine you will be making an appointment for.</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+<div id="about" class="container-fluid">
+<div class="row">
+    <div class="col-sm-8">
+      <h2>Post-Vaccination</h2><br>
+      <p>Feel free to report to the portal in case you face any complications after the vaccination and  we will provide you with immediate medical assistance by contacting the nearby hospitals.</p>
+</body>
+</html>
+{% endif %}

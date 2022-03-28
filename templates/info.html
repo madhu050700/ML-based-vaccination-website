@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>info</title>
+</head>
+{% if request.session.email %}
+<body>
+<form>
+        <label for="age"><b>Age</b></label>
+        <input type="number" placeholder="Enter your age" name="age" required>  
+        <label> <b> Do you have any allergy/conditions ?</b> </label>
+<select id="disease" name="disease">
+    <option value="choose">Choose</option>
+    <option value="1">Allergic to L-Histidine hydrochloride monohydrate</option>
+    <option value="1">Allergic to L-Histidine</option>
+    <option value="0">Latex Allergy</option>
+    <option value="0">Pets Allergy</option>
+    <option value="0">Food Allergy</option>
+    <option value="0">Insects Allergy</option>
+    <option value="1">Anaphylaxis</option>
+    <option value="0">Venom Allergy</option>
+    <option value="1">Pregnant</option>
+    <option value="1">Allergic to  Disodium edetate dihydrate (EDTA)</option>
+    <option value="1">Allergic to Sodium chloride</option>
+    <option value="1">Allergic to Polysorbate 80</option>
+    <option value="1">Allergic to Ethanol</option>
+    <option value="1">Allergic to Sucrose</option>
+    <option value="1">Allergic to Magnesium chloride hexahydrate</option>
+    <option value="0">Drug Allergy</option>
+    <option value="0">Oral Medications</option>
+    <option value="0">Others</option>
+    <option value="0">None</option>    
+  
+</select><br><br>
+<label> <b> Do you have any other ailments?</b> </label>
+<select id="ailments" name="ailments">
+  <option value="choose">Choose</option>
+  <option value="0">High BP</option>
+  <option value="1">Fever</option>
+  <option value="0">Hypertension</option>
+  <option value="0">Low BP</option>
+  <option value="0">Cholesterol</option>
+  <option value="0">Malaria</option>
+  <option value="0">Diabetes</option>
+  <option value="0">Tuberculosis</option>
+  <option value="1">Uncontrolled BP</option>
+  <option value="0">Asthma</option>
+  <option value="0">Heart disease</option>
+  <option value="0">Pneumonia</option>
+  <option value="1">Bleeding disorder</option>
+  <option value="0">Pulmonary disease</option>
+  <option value="0">Others</option>
+  <option value="0">None</option>     
+</select><br><br>
+<button type="submit">Submit</button>
+</form>
+    
+</body>
+{% endif %}
+</html>

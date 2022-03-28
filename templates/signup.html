@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+  <title>Contact</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">Covid Vaccination Website</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/helpline">Helpline</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/login">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/signup">Sign up</a>
+          </li>
+
+
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+  {% if messages %}
+  {% for message in messages %}
+  <div class="alert alert-{{ message.tags }} alert-dismissible fade show my-0" role="alert">
+    <strong>{{ message }}</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  {% endfor %}
+  {% endif %}
+  <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+var check = function() {
+  if (document.getElementById('pwd').value ==
+    document.getElementById('pwd_rep').value) {
+    document.getElementById('message1').style.color = 'green';
+    document.getElementById('message1').innerHTML = 'matching';
+  } else {
+    document.getElementById('message1').style.color = 'red';
+    document.getElementById('message1').innerHTML = 'not matching';
+  }
+}
+
+</script>
+</head>
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box}
+
+/* Full-width input fields */
+input[type=text], input[type=password], input[type=email], input[type=tel], input[type=number]{
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 20px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, input[type=tel]:focus, input[type=number]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+select {
+  width: 200px;
+  margin: 10px;
+}
+select:focus {
+  min-width: 150px;
+  width: auto;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+.invalid{
+  font-size: x-small;
+  
+}
+h5{
+  margin:10px 0 10px 0;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+  padding: 16px;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+     width: 100%;
+  }
+}
+</style>
+
+<body>
+
+<form method="POST" style="border:1px solid #ccc " action="/signup" onSubmit = "return checkPassword(this)">
+    {% csrf_token %}
+  <div class="container">
+    <h1>Sign Up</h1>
+    <p>Please fill in this form to create an account.</p>
+    <hr>
+    <label for="Username"><b>Name</b></label>
+    <input type="text" placeholder="Enter name" name="pname" required>
+
+    <label for="email"><b>Email</b></label>
+    <input type="email" placeholder="Enter Email" name="email" required>
+    <label for="mobile no "><b>Mobile No</b></label>
+    <input type="tel" placeholder="Enter Mobile No" name="mobileno" pattern="[7-9]{1}[0-9]{9}"required>
+    <label for="Blood group "><b>Blood group</b></label>
+    <input type="text" placeholder="Enter your blood group" name="bloodgroup" required>
+    <label for="age"><b>Age</b></label>
+    <input type="number" placeholder="Enter your age" name="age" required>
+    <label for="Location "><b>Location</b></label>
+    <input type="text" placeholder="Enter Location" name="locationinfo" required>
+
+
+    <label for="Password"><b>Password</b></label>
+    <input type="Password" placeholder="Enter Password"  id = "pwd" name="pwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" onkeyup='check();' required>
+     <div id="message">
+  <h5>Password must contain the following:</h5>
+  <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+  <p id="capital" class="invalid">A <b>uppercase</b> letter</p>
+  <p id="number" class="invalid">A <b>number</b></p>
+  <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+  </div>
+
+    <label for="Password_Repeat"><b>Password_Repeat</b></label>
+    <input type="password" placeholder="Repeat Password" id="pwd_rep" name="pwd_rep" onkeyup='check();' required>
+    <span id=message1></span>
+    <br>
+    <br>
+    
+ 
+<label> <b> Do you have any allergy/conditions ?</b> </label>
+<select id="disease" name="disease">
+    <option value="choose">Choose</option>
+    <option value="1">Allergic to L-Histidine hydrochloride monohydrate</option>
+    <option value="1">Allergic to L-Histidine</option>
+    <option value="0">Latex Allergy</option>
+    <option value="0">Pets Allergy</option>
+    <option value="0">Food Allergy</option>
+    <option value="0">Insects Allergy</option>
+    <option value="1">Anaphylaxis</option>
+    <option value="0">Venom Allergy</option>
+    <option value="1">Pregnant</option>
+    <option value="1">Allergic to  Disodium edetate dihydrate (EDTA)</option>
+    <option value="1">Allergic to Sodium chloride</option>
+    <option value="1">Allergic to Polysorbate 80</option>
+    <option value="1">Allergic to Ethanol</option>
+    <option value="1">Allergic to Sucrose</option>
+    <option value="1">Allergic to Magnesium chloride hexahydrate</option>
+    <option value="0">Drug Allergy</option>
+    <option value="0">Oral Medications</option>
+    <option value="0">Others</option>
+    <option value="0">None</option>    
+  
+</select><br><br>
+<label> <b> Do you have any other ailments?</b> </label>
+<select id="ailments" name="ailments">
+  <option value="choose">Choose</option>
+  <option value="0">High BP</option>
+  <option value="1">Fever</option>
+  <option value="0">Hypertension</option>
+  <option value="0">Low BP</option>
+  <option value="0">Cholesterol</option>
+  <option value="0">Malaria</option>
+  <option value="0">Diabetes</option>
+  <option value="0">Tuberculosis</option>
+  <option value="1">Uncontrolled BP</option>
+  <option value="0">Asthma</option>
+  <option value="0">Heart disease</option>
+  <option value="0">Pneumonia</option>
+  <option value="1">Bleeding disorder</option>
+  <option value="0">Pulmonary disease</option>
+  <option value="0">Others</option>
+  <option value="0">None</option>     
+</select><br><br>
+<label>
+      <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+    </label><br>
+    
+    <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+    <div class="clearfix">
+      <button type="button" class="cancelbtn">Cancel</button>
+      <button type="submit"  value="Signup" class="signupbtn">Signup</button>
+      {% if messages %}
+      {% for mess in messages %}
+      <b>{{mess}}</b>
+      {% endfor %}
+      {% endif %}
+
+    </div>
+  </div>
+</form>
+</body>
+</html>

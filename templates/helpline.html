@@ -1,0 +1,581 @@
+
+
+{% if request.session.email %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <title>Helpline</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">Covid Vaccination Website</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/about">About</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="/services" role="button" aria-expanded="false">Services</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="/appointment">Book Appointment</a></li>
+                  <li><a class="dropdown-item" href="">Doctor Support</a></li>
+                  <li><a class="dropdown-item" href="">Health Tips</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/helpline">Helpline</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/contact">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/logout">Logout</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="">User:{{request.session.email}}</a>
+              </li>
+              
+              
+            </ul>
+            
+          </div>
+        </div>
+      </nav>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+#t01 {
+  width: 100%;    
+  background-color: #f1f1c1;
+}
+</style>
+</head>
+<body>
+
+<h1 class="text-center my-3">Covid 19 Helpline numbers</h1>
+<h3>Central Helpline Number for corona-virus:</h3> <h3 style="color:red"> +91-11-23978046</h3>
+<h3>State Wise Helpline Numbers: </h3>
+
+
+<table style=" width:100%" id="t01" class="container my-3">
+  <tr>
+    <th class="text-center my-3">S.No</th>
+    <th class="text-center my-3">Name of the State</th> 
+    <th class="text-center my-3">Helpline Number</th>
+  </tr>
+  <tr>
+    <td class="text-center my-3">1</td>
+    <td class="text-center my-3">Andhra Pradesh</td>
+    <td class="text-center my-3">0866-2410978</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">2</td>
+    <td class="text-center my-3">Arunachal Pradesh </td>
+    <td class="text-center my-3">9436055743</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">3</td>
+    <td class="text-center my-3">Assam</td>
+    <td class="text-center my-3">6913347770</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">4</td>
+    <td class="text-center my-3">104</td>
+    <td class="text-center my-3">80</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">5</td>
+    <td class="text-center my-3">Chhattisgarh</td>
+    <td class="text-center my-3">104</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">6</td>
+    <td class="text-center my-3">Goa </td>
+    <td class="text-center my-3">104</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">7</td>
+    <td class="text-center my-3">Gujarat</td>
+    <td class="text-center my-3">104</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">8</td>
+    <td class="text-center my-3">Haryana </td>
+    <td class="text-center my-3">8558893911</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">9</td>
+    <td class="text-center my-3">Himachal Pradesh </td>
+    <td class="text-center my-3">104</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">10</td>
+    <td class="text-center my-3">Jharkhand</td>
+    <td class="text-center my-3">104</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">11</td>
+    <td class="text-center my-3">Karnataka</td>
+    <td class="text-center my-3">104</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">12</td>
+    <td class="text-center my-3">Kerala </td>
+    <td class="text-center my-3">0471-2552056</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">13</td>
+    <td class="text-center my-3">Madhya Pradesh</td>
+    <td class="text-center my-3">104</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">14</td>
+    <td class="text-center my-3">Maharashtra </td>
+    <td class="text-center my-3">020-26127394</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">15</td>
+    <td class="text-center my-3">Manipur </td>
+    <td class="text-center my-3">3852411668</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">16</td>
+    <td class="text-center my-3">Meghalaya</td>
+    <td class="text-center my-3">108</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">17</td>
+    <td class="text-center my-3">Mizoram</td>
+    <td class="text-center my-3">102</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">18</td>
+    <td class="text-center my-3">Nagaland</td>
+    <td class="text-center my-3">7005539653</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">19</td>
+    <td class="text-center my-3">Odisha</td>
+    <td class="text-center my-3">9439994859</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">20</td>
+    <td class="text-center my-3">Punjab </td>
+    <td class="text-center my-3">104</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">21</td>
+    <td class="text-center my-3">Rajasthan</td>
+    <td class="text-center my-3">0141-2225624</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">22</td>
+    <td class="text-center my-3">Sikkim</td>
+    <td class="text-center my-3">104</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">23</td>
+    <td class="text-center my-3">Tamil Nadu</td>
+    <td class="text-center my-3">044-29510500</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">24</td>
+    <td class="text-center my-3">Telangana </td>
+    <td class="text-center my-3">104</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">25</td>
+    <td class="text-center my-3">Tripura</td>
+    <td class="text-center my-3">0381-2315879</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">26</td>
+    <td class="text-center my-3">Uttarakhand</td>
+    <td class="text-center my-3">104</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">27</td>
+    <td class="text-center my-3">Uttar Pradesh</td>
+    <td class="text-center my-3">18001805145</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">28</td>
+    <td class="text-center my-3">West Bengal</td>
+    <td class="text-center my-3">1800313444222, 03323412600,</td>
+  </tr>
+  
+  <table style=" width:100%" id="t01" class="container my-3">
+  <tr>
+    <th class="text-center my-3">S.No</th>
+    <th class="text-center my-3">Name of the Union Territory</th> 
+    <th class="text-center my-3">Helpline Number </th>
+  </tr>
+  <tr>
+    <td class="text-center my-3">1</td>
+    <td class="text-center my-3">Andaman and Nicobar Islands</td>
+    <td class="text-center my-3">03192-232102</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">2</td>
+    <td class="text-center my-3">Chandigarh</td>
+    <td class="text-center my-3">9779558282</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">3</td>
+    <td class="text-center my-3">Dadra and Nagar Haveli and Daman & Diu</td>
+    <td class="text-center my-3">104</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">4</td>
+    <td class="text-center my-3">Delhi</td>
+    <td class="text-center my-3">011-22307145</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">5</td>
+    <td class="text-center my-3">Jammu & Kashmir </td>
+    <td class="text-center my-3">01912520982, 0194-2440283</td>
+  </tr>
+  
+  <tr>
+    <td class="text-center my-3">6</td>
+    <td class="text-center my-3">Ladakh </td>
+    <td class="text-center my-3">01982256462</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">7</td>
+    <td class="text-center my-3">Lakshadweep</td>
+    <td class="text-center my-3">104</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">8</td>
+    <td class="text-center my-3">Puducherry</td>
+    <td class="text-center my-3">104</td>
+  </tr>
+  
+</table>
+<br>
+</body>
+</html>
+{% else %} 
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <title>Helpline</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">Covid Vaccination Website</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/helpline">Helpline</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/login">Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/signup">signup</a>
+              </li>
+              
+              
+            </ul>
+            
+          </div>
+        </div>
+      </nav>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+#t01 {
+  width: 100%;    
+  background-color: #f1f1c1;
+}
+</style>
+</head>
+<body>
+
+<h1 class="text-center my-3">Covid 19 Helpline numbers</h1>
+<h3>Central Helpline Number for corona-virus:</h3> <h3 style="color:red"> +91-11-23978046</h3>
+<h3>State Wise Helpline Numbers: </h3>
+
+
+<table style=" width:100%" id="t01" class="container my-3">
+  <tr>
+    <th class="text-center my-3">S.No</th>
+    <th class="text-center my-3">Name of the State</th> 
+    <th class="text-center my-3">Helpline Number</th>
+  </tr>
+  <tr>
+    <td class="text-center my-3">1</td>
+    <td class="text-center my-3">Andhra Pradesh</td>
+    <td class="text-center my-3">0866-2410978</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">2</td>
+    <td class="text-center my-3">Arunachal Pradesh </td>
+    <td class="text-center my-3">9436055743</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">3</td>
+    <td class="text-center my-3">Assam</td>
+    <td class="text-center my-3">6913347770</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">4</td>
+    <td class="text-center my-3">104</td>
+    <td class="text-center my-3">80</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">5</td>
+    <td class="text-center my-3">Chhattisgarh</td>
+    <td class="text-center my-3">104</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">6</td>
+    <td class="text-center my-3">Goa </td>
+    <td class="text-center my-3">104</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">7</td>
+    <td class="text-center my-3">Gujarat</td>
+    <td class="text-center my-3">104</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">8</td>
+    <td class="text-center my-3">Haryana </td>
+    <td class="text-center my-3">8558893911</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">9</td>
+    <td class="text-center my-3">Himachal Pradesh </td>
+    <td class="text-center my-3">104</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">10</td>
+    <td class="text-center my-3">Jharkhand</td>
+    <td class="text-center my-3">104</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">11</td>
+    <td class="text-center my-3">Karnataka</td>
+    <td class="text-center my-3">104</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">12</td>
+    <td class="text-center my-3">Kerala </td>
+    <td class="text-center my-3">0471-2552056</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">13</td>
+    <td class="text-center my-3">Madhya Pradesh</td>
+    <td class="text-center my-3">104</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">14</td>
+    <td class="text-center my-3">Maharashtra </td>
+    <td class="text-center my-3">020-26127394</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">15</td>
+    <td class="text-center my-3">Manipur </td>
+    <td class="text-center my-3">3852411668</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">16</td>
+    <td class="text-center my-3">Meghalaya</td>
+    <td class="text-center my-3">108</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">17</td>
+    <td class="text-center my-3">Mizoram</td>
+    <td class="text-center my-3">102</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">18</td>
+    <td class="text-center my-3">Nagaland</td>
+    <td class="text-center my-3">7005539653</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">19</td>
+    <td class="text-center my-3">Odisha</td>
+    <td class="text-center my-3">9439994859</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">20</td>
+    <td class="text-center my-3">Punjab </td>
+    <td class="text-center my-3">104</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">21</td>
+    <td class="text-center my-3">Rajasthan</td>
+    <td class="text-center my-3">0141-2225624</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">22</td>
+    <td class="text-center my-3">Sikkim</td>
+    <td class="text-center my-3">104</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">23</td>
+    <td class="text-center my-3">Tamil Nadu</td>
+    <td class="text-center my-3">044-29510500</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">24</td>
+    <td class="text-center my-3">Telangana </td>
+    <td class="text-center my-3">104</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">25</td>
+    <td class="text-center my-3">Tripura</td>
+    <td class="text-center my-3">0381-2315879</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">26</td>
+    <td class="text-center my-3">Uttarakhand</td>
+    <td class="text-center my-3">104</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">27</td>
+    <td class="text-center my-3">Uttar Pradesh</td>
+    <td class="text-center my-3">18001805145</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">28</td>
+    <td class="text-center my-3">West Bengal</td>
+    <td class="text-center my-3">1800313444222, 03323412600,</td>
+  </tr>
+  
+  <table style=" width:100%" id="t01" class="container my-3">
+  <tr>
+    <th class="text-center my-3">S.No</th>
+    <th class="text-center my-3">Name of the Union Territory</th> 
+    <th class="text-center my-3">Helpline Number </th>
+  </tr>
+  <tr>
+    <td class="text-center my-3">1</td>
+    <td class="text-center my-3">Andaman and Nicobar Islands</td>
+    <td class="text-center my-3">03192-232102</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">2</td>
+    <td class="text-center my-3">Chandigarh</td>
+    <td class="text-center my-3">9779558282</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">3</td>
+    <td class="text-center my-3">Dadra and Nagar Haveli and Daman & Diu</td>
+    <td class="text-center my-3">104</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">4</td>
+    <td class="text-center my-3">Delhi</td>
+    <td class="text-center my-3">011-22307145</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">5</td>
+    <td class="text-center my-3">Jammu & Kashmir </td>
+    <td class="text-center my-3">01912520982, 0194-2440283</td>
+  </tr>
+  
+  <tr>
+    <td class="text-center my-3">6</td>
+    <td class="text-center my-3">Ladakh </td>
+    <td class="text-center my-3">01982256462</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">7</td>
+    <td class="text-center my-3">Lakshadweep</td>
+    <td class="text-center my-3">104</td>
+  </tr>
+  <tr>
+    <td class="text-center my-3">8</td>
+    <td class="text-center my-3">Puducherry</td>
+    <td class="text-center my-3">104</td>
+  </tr>
+  
+</table>
+<br>
+</body>
+</html>
+{% endif %} 
+

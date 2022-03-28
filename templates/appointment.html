@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script src="http://maps.google.com/maps/api/place/nearbysearch?key=<AIzaSyDsrOdY3O5HHCf0EGSUPbyjZpi5P4-fyiU>"></script>
+
+    <title>Appointment</title>
+  </head>
+<script>
+
+var x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition, showError);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  var request = {
+    location: new google.maps.LatLng(position.coords.latitude,position.coords.longitude),
+    radius: '2000',
+    types: ['hospital']
+	};
+  var container = document.getElementById('results');
+
+var service = new google.maps.places.PlacesService(container);
+service.nearbySearch(request, callback);
+function callback(results, status) {
+
+    if (status == google.maps.places.PlacesServiceStatus.OK) {
+
+        for (var i = 0; i < results.length; i++) {
+
+            container.innerHTML += results[i].name + '<br />';
+        }
+    }
+}
+
+}
+
+function showError(error) {
+  switch(error.code) {
+    case error.PERMISSION_DENIED:
+      x.innerHTML = "User denied the request for Geolocation."
+      break;
+    case error.POSITION_UNAVAILABLE:
+      x.innerHTML = "Location information is unavailable."
+      break;
+    case error.TIMEOUT:
+      x.innerHTML = "The request to get user location timed out."
+      break;
+    case error.UNKNOWN_ERROR:
+      x.innerHTML = "An unknown error occurred."
+      break;
+  }
+}
+
+
+
+</script>
+
+</script>
+  {% if request.session.email %}
+  <body>
+  
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">Covid Vaccination Website</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/about">About</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="/services" role="button" aria-expanded="false">Services</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="/appointment">Book Appointment</a></li>
+                  <li><a class="dropdown-item" href="">Doctor Support</a></li>
+                  <li><a class="dropdown-item" href="">Health Tips</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/helpline">Helpline</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/contact">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/logout">Logout</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="">User:{{request.session.email}}</a>
+              </li>
+              
+              
+            </ul>
+            
+          </div>
+        </div>
+      </nav>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+    -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+        body{
+            background-color: hsl(204, 43%, 93%);
+        }
+        .box{
+            width:55%;
+            height:820px;
+            background-color: #c8c6a7;
+            margin:50px auto;
+            border-radius: 12px;
+            font-size: 24px;
+            font-family:'Montserrat', sans-serif;
+            padding:100px 70px 200px 70px;
+            position:relative;
+            line-height: 3;
+        }
+        .BUTTON_PNS {
+            -webkit-border-radius: 20px;
+            -moz-border-radius: 20px;
+            border-radius: 20px;
+            color: #000000;
+            font-family: Times New Roman;
+            font-size: 35px;
+            font-weight: 100;
+            background-color: #3D95F6;
+            -webkit-box-shadow: 1px 1px 20px 0 #000000;
+            -moz-box-shadow: 1px 1px 20px 0 #000000;
+            box-shadow: 1px 1px 20px 0 #000000;
+            text-shadow: 1px 1px 20px #000000;
+            border: solid #337FED 1px;
+            text-decoration: none;
+            margin-top: 30px;
+            width:130px;
+            display: inline-block;
+            cursor: pointer;
+            text-align: center;
+
+        }
+
+        .BUTTON_PNS:hover {
+            border: solid #337FED 1px;
+            background: #1E62D0;
+            background-image: -webkit-linear-gradient(top, #1E62D0, #3D94F6);
+            background-image: -moz-linear-gradient(top, #1E62D0, #3D94F6);
+            background-image: -ms-linear-gradient(top, #1E62D0, #3D94F6);
+            background-image: -o-linear-gradient(top, #1E62D0, #3D94F6);
+            background-image: -webkit-gradient(to bottom, #1E62D0, #3D94F6);
+            -webkit-border-radius: 20px;
+            -moz-border-radius: 20px;
+            border-radius: 20px;
+            margin-top:30px;
+            text-decoration: none;
+        }
+        select {
+            width: 200px;
+            margin: 10px;
+        }
+        select:focus {
+            min-width: 150px;
+            width: auto;
+        }
+
+        input {
+            height: 24px;
+            flex: 0 0 200px;
+            margin-left: 20px;
+        }
+        h2{
+            position:absolute;
+            top:10px;
+            color:#435560;
+            margin-top: 20px;
+        }
+        #date{
+          height:30px;
+        }
+
+</style>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+</head>
+{% if request.session.email and ans == 'Eligible' %}
+<body>
+    <div class="box" >
+      <b>YOU ARE ELIGIBLE TO BOOK AN APPOINTMENT!!</b>
+        <h2> Book an Appointment</h2>
+        <form class="book"  >
+
+            <label><b> Date</b> </label>
+            <input type="date" name="date" id="date" required><br>
+            <label><b>Vaccination Center</b></label>
+            <div id="results"></div>
+            <select id="hosi" name="hosi" onmouseover="getLocation()">
+                <option value="choose">Choose</option>
+                <option value="hosi1">Hosi1</option>
+                <option value="hosi2">Hosi2</option>
+                <option value="hosi3">Hosi3</option>
+                <option value="hosi4">Hosi4</option>
+            </select><br>
+            <p id="demo"></p>
+            <label><b>Slot</b></label>
+            <select id="time" name="time">
+                <option value="choose">Choose</option>
+                <option value="slot1">Slot1</option>
+                <option value="slot2">Slot2</option>
+                <option value="slot3">Slot3</option>
+                <option value="slot4">Slot4</option>
+            </select><br>
+            <label> <b>Vaccination option</b></label>
+            <input type="radio" name="vaccine" >Covishield  <input type="radio" name="vaccine">Covaxine<br>
+            <label><b>Second Dosage</b> </label>
+            <input type="radio" name="dosage" >Yes  <input type="radio" name="dosage">No<br>
+            <a href="" class="BUTTON_PNS">Book</a>
+
+        </form>
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+    crossorigin="anonymous"></script>
+    
+</body>
+{% endif %}
+{% if request.session.email and ans == 'Not Eligible' %}
+<body>
+  <h3> You are not Eligible</h3>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+    crossorigin="anonymous"></script>
+</body>
+{% endif %}
+<body>
+<form class="book" action="/appointment" method="POST">
+  {% csrf_token %}
+  <div class="box">
+  <h3 class="text-center my-3"><b>Register to book an appointment</b></h3>
+  <br>
+  <label for="uname"><b>Username</b></label>
+  <input type="text" placeholder="Enter email" name="email" required>
+  <br>
+  <label for="psw"><b>Password</b></label>
+  <input type="password" placeholder="Enter Password" name="pwd" required>
+  <br>
+  <label for="age"><b>Age</b></label>
+  <input type="tel" placeholder="Enter Age" name="age" required>
+  <br>
+  <label for="ailments"> <b> Do you have any ailments ?</b> </label>
+
+  <select id="ailments" name="ailments">
+<option value="choose">Choose</option>
+<option value="0">High BP</option>
+<option value="1">Fever</option>
+<option value="0">Hypertension</option>
+<option value="0">Low BP</option>
+<option value="0">Cholesterol</option>
+<option value="0">Malaria</option>
+<option value="0">Diabetes</option>
+<option value="0">Tuberculosis</option>
+<option value="1">Uncontrolled BP</option>
+<option value="0">Asthma</option>
+<option value="0">Heart disease</option>
+<option value="0">Pneumonia</option>
+<option value="1">Bleeding disorder</option>
+<option value="0">Pulmonary disease</option>
+<option value="0">Others</option>
+<option value="0">None</option>      
+  </select>
+  <br>
+
+
+  <label for="disease"> <b> Do you have any other allergy ?</b> </label>
+  <select id="disease" name="disease">
+<option value="choose">Choose</option>
+
+<option value="1">Allergic to L-Histidine hydrochloride monohydrate</option>
+<option value="1">Allergic to L-Histidine</option>
+<option value="0">Latex Allergy</option>
+<option value="0">Pets Allergy</option>
+<option value="0">Food Allergy</option>
+<option value="0">Insects Allergy</option>
+<option value="1">Anaphylaxis</option>
+<option value="0">Venom Allergy</option>
+<option value="1">Pregnant</option>
+<option value="1">Allergic to  Disodium edetate dihydrate (EDTA)</option>
+<option value="1">Allergic to Sodium chloride</option>
+<option value="1">Allergic to Polysorbate 80</option>
+<option value="1">Allergic to Ethanol</option>
+<option value="1">Allergic to Sucrose</option>
+<option value="1">Allergic to Magnesium chloride hexahydrate</option>
+<option value="0">Drug Allergy</option>
+<option value="0">Oral Medications</option>
+<option value="0">Others</option>
+<option value="0">None</option>     
+    
+  </select><br>
+  <button type="submit" class="BUTTON_PNS"  >Register</button>
+  <p id = "demo"></p>
+  
+  
+</div>
+
+</form>
+ 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+  crossorigin="anonymous"></script>
+  
+  </script>
+</body>
+</html>
+
+
+
+{% endif %}
+
